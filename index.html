@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Teachable Machine - Cat vs Dog</title>
-  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+  <title>Teachable Machine Test</title>
 </head>
 <body>
   <h1>고양이 vs 강아지 분류기</h1>
-  <button type="button" onclick="init()">모델 불러오기</button>
-  <button type="button" onclick="predict()">예측하기</button>
+  <button onclick="init()">모델 불러오기</button>
+  <button onclick="predict()">예측하기</button>
   <div><canvas id="webcam-canvas"></canvas></div>
   <div id="label-container"></div>
 
-  <script type="text/javascript">
-    const URL = "./model/"; // 모델 파일이 위치한 경로
+  <!-- Teachable Machine 라이브러리 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+  <script>
+    const URL = "./model/";
     let model, webcam, labelContainer, maxPredictions;
 
     async function init() {
